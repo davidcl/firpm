@@ -114,9 +114,7 @@ void initUniformExtremas(std::vector<double>& omega,
     }
     if(nonPointBands.empty())
     {
-        std::cerr << "All intervals are points!\n";
-        exit(EXIT_FAILURE);
-
+        throw "All intervals are points!\n";
     }
     // TODO: error check
     avgDistance /= (omega.size() - B.size());
@@ -239,8 +237,7 @@ void referenceScaling(std::vector<double>& newX, std::vector<Band>& newChebyBand
         }
         if(newXSize > newX.size())
         {
-            std::cerr << "Failed to do reference scaling\n";
-            exit(EXIT_FAILURE);
+            throw "Failed to do reference scaling\n";
         }
         newX.resize(newXSize);
         std::sort(newX.begin(), newX.end());
@@ -256,8 +253,7 @@ void referenceScaling(std::vector<double>& newX, std::vector<Band>& newChebyBand
         }
         if(total != newXSize)
         {
-            std::cout << "Failed to find distribution!\n";
-            exit(EXIT_FAILURE);
+            throw "Failed to find distribution!\n";
         }
 
 
@@ -560,8 +556,7 @@ void findEigenExtrema(double& convergenceOrder,
     }
     if (alternatingExtrema.size() < x.size())
     {
-        std::cerr << "Trouble!\n";
-        exit(EXIT_FAILURE);
+        throw "Trouble!\n";
     }
 
     //std::cout << "After removal: " << alternatingExtrema.size() << std::endl;
