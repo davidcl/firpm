@@ -26,6 +26,8 @@
 #ifndef UTIL_H_
 #define UTIL_H_
 
+#include "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\malloc.h"
+
 #include <utility>
 #include <vector>
 #include <list>
